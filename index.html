@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Todona - Toko Buku Sederhana</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-secondary">
+    <div class="container p-4 my-4 bg-light rounded shadow-lg">
+      <!-- Navigation Menu -->
+      <nav class="d-flex justify-content-between align-items-center py-3">
+        <h1 class="text-dark">Todona</h1>
+        <ul class="nav">
+          <li class="nav-item"><a href="#collection" class="nav-link text-dark fw-bold">Produk Kami</a></li>
+          <li class="nav-item"><a href="#tentang" class="nav-link text-dark fw-bold">Tentang Kami</a></li>
+          <li class="nav-item"><a href="#order" class="nav-link text-dark fw-bold">Cara Order</a></li>
+        </ul>
+      </nav>
+
+      <!-- Search and Filter -->
+      <div class="d-flex justify-content-between mb-4">
+        <input type="text" id="search" class="form-control w-50" placeholder="Cari buku...">
+        <select id="filter" class="form-select w-25 ms-3">
+          <option value="">Filter by Category</option>
+          <option value="fiction">Fiction</option>
+          <option value="non-fiction">Non-fiction</option>
+          <option value="self-help">Self-help</option>
+          <option value="education">Education</option>
+          <option value="engineering">Engineering</option>
+        </select>
+      </div>
+
+      <!-- Book Collection -->
+      <section id="collection" class="text-center mb-5">
+        <h3>Our Collection</h3>
+        <p class="w-75 mx-auto text-muted">Discover our carefully curated selection of books in various genres.</p>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          
+          <!-- Existing Book Cards -->
+          <div class="col" data-category="education">
+            <div class="card h-100">
+              <img src="images/buku1.jpg" class="card-img-top" alt="AI and Machine Learning for Coders">
+              <div class="card-body">
+                <h5 class="card-title">AI and Machine Learning for Coders</h5>
+                <p class="card-text">By Laurence Moroney</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <button class="btn btn-primary btn-sm btnDetail" data-title="AI and Machine Learning for Coders" data-category="education" data-price="$998" data-description="Practical guide to AI and machine learning">Detail</button>
+                <span class="text-danger fw-bold">$998</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col" data-category="engineering">
+            <div class="card h-100">
+              <img src="images/buku2.jpg" class="card-img-top" alt="Web Scalability for Startup Engineers">
+              <div class="card-body">
+                <h5 class="card-title">Web Scalability for Startup Engineers</h5>
+                <p class="card-text">By Artur Ejsmont</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <button class="btn btn-primary btn-sm btnDetail" data-title="Web Scalability for Startup Engineers" data-category="engineering" data-price="$996" data-description="Learn how to scale web applications for startups.">Detail</button>
+                <span class="text-danger fw-bold">$996</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col" data-category="self-help">
+            <div class="card h-100">
+              <img src="images/buku3.jpg" class="card-img-top" alt="Atomic Habits">
+              <div class="card-body">
+                <h5 class="card-title">Atomic Habits</h5>
+                <p class="card-text">By James Clear</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <button class="btn btn-primary btn-sm btnDetail" data-title="Atomic Habits" data-category="self-help" data-price="$995" data-description="A guide to building good habits and breaking bad ones.">Detail</button>
+                <span class="text-danger fw-bold">$995</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Fiction Books -->
+          <div class="col" data-category="fiction">
+            <div class="card h-100">
+              <img src="images/fiksi1.jpg" class="card-img-top" alt="Fiction Book 1">
+              <div class="card-body">
+                <h5 class="card-title">To Kill a Mockingbird</h5>
+                <p class="card-text">Harper Lee</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <button class="btn btn-primary btn-sm btnDetail" data-title="To Kill a Mockingbird" data-category="fiction" data-price="$900" data-description="Sebuah cerita klasik tentang keadilan, moralitas, dan perjuangan sosial yang berlangsung di Alabama pada tahun 1930-an.">Detail</button>
+                <span class="text-danger fw-bold">$900</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col" data-category="fiction">
+            <div class="card h-100">
+              <img src="images/fiksi2.jpg" class="card-img-top" alt="Fiction Book 2">
+              <div class="card-body">
+                <h5 class="card-title">The Great Gatsby</h5>
+                <p class="card-text">F. Scott Fitzgerald</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <button class="btn btn-primary btn-sm btnDetail" data-title="The Great Gatsby" data-category="fiction" data-price="$880" data-description="Novel terkenal tentang cinta, ambisi, dan tragedi di era Jazz di Amerika Serikat.">Detail</button>
+                <span class="text-danger fw-bold">$880</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Non-Fiction Books -->
+          <div class="col" data-category="non-fiction">
+            <div class="card h-100">
+              <img src="images/nfiksi1.jpg" class="card-img-top" alt="Non-Fiction Book 1">
+              <div class="card-body">
+                <h5 class="card-title">Sapiens: A Brief History of Humankind</h5>
+                <p class="card-text">Yuval Noah Harari</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <button class="btn btn-primary btn-sm btnDetail" data-title="Sapiens: A Brief History of Humankind" data-category="non-fiction" data-price="$920" data-description="Buku yang mengulas sejarah manusia dari perspektif sains, antropologi, dan sosiologi.">Detail</button>
+                <span class="text-danger fw-bold">$920</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col" data-category="non-fiction">
+            <div class="card h-100">
+              <img src="images/nfiksi2.jpg" class="card-img-top" alt="Non-Fiction Book 2">
+              <div class="card-body">
+                <h5 class="card-title">Educated</h5>
+                <p class="card-text">Tara Westover</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <button class="btn btn-primary btn-sm btnDetail" data-title="Educated" data-category="non-fiction" data-price="$890" data-description="Memoar inspiratif tentang perjalanan hidup seorang gadis dari keluarga konservatif yang akhirnya mengenyam pendidikan tinggi.">Detail</button>
+                <span class="text-danger fw-bold">$890</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Self-Help Books -->
+          <div class="col" data-category="self-help">
+            <div class="card h-100">
+              <img src="images/shelp1.jpg" class="card-img-top" alt="Self-Help Book 1">
+              <div class="card-body">
+                <h5 class="card-title">The Power of Habit</h5>
+                <p class="card-text">Charles Duhigg</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <button class="btn btn-primary btn-sm btnDetail" data-title="The Power of Habit" data-category="self-help" data-price="$910" data-description="Buku yang mengeksplorasi kebiasaan manusia dan bagaimana membentuk kebiasaan yang positif.">Detail</button>
+                <span class="text-danger fw-bold">$910</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col" data-category="self-help">
+            <div class="card h-100">
+              <img src="images/shelp2.png" class="card-img-top" alt="Self-Help Book 2">
+              <div class="card-body">
+                <h5 class="card-title">How to Win Friends and Influence People</h5>
+                <p class="card-text">Dale Carnegie</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <button class="btn btn-primary btn-sm btnDetail" data-title="How to Win Friends and Influence People" data-category="self-help" data-price="$890" data-description="Description of Self-Help Book 2">Detail</button>
+                <span class="text-danger fw-bold">$890</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Education Books -->
+          <div class="col" data-category="education">
+            <div class="card h-100">
+              <img src="images/edukasi1.jpg" class="card-img-top" alt="Education Book 1">
+              <div class="card-body">
+                <h5 class="card-title">Management information system</h5>
+                <p class="card-text">Kenneth C. Laudon dan Jane P. Laudon</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <button class="btn btn-primary btn-sm btnDetail" data-title="Management information system" data-category="education" data-price="$930" data-description="Buku ini adalah referensi komprehensif untuk memahami bagaimana sistem informasi digunakan untuk mendukung pengambilan keputusan, pengelolaan data, serta meningkatkan kinerja perusahaan di era digital. Buku ini mencakup konsep penting mengenai sistem informasi, teknologi, strategi bisnis, dan pengelolaan sumber daya TI yang diperlukan dalam perusahaan modern.">Detail</button>
+                <span class="text-danger fw-bold">$930</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col" data-category="education">
+            <div class="card h-100">
+              <img src="images/edukasi2.jpg" class="card-img-top" alt="Education Book 2">
+              <div class="card-body">
+                <h5 class="card-title">Information Systems for Business and Beyond</h5>
+                <p class="card-text">David T. Bourgeois</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <button class="btn btn-primary btn-sm btnDetail" data-title="Information Systems for Business and Beyond" data-category="education" data-price="$870" data-description="Buku ini memberikan pengantar tentang konsep dasar sistem informasi yang diterapkan dalam dunia bisnis. Topik yang dibahas meliputi dasar-dasar perangkat keras dan perangkat lunak, jaringan, keamanan informasi, etika TI, serta cara sistem informasi mendukung strategi bisnis dan pengambilan keputusan. Buku ini juga memperkenalkan tren terbaru dalam dunia IT seperti komputasi awan dan big data.">Detail</button>
+                <span class="text-danger fw-bold">$870</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Engineering Books -->
+          <div class="col" data-category="engineering">
+            <div class="card h-100">
+              <img src="images/teknik1.jpg" class="card-img-top" alt="Engineering Book 1">
+              <div class="card-body">
+                <h5 class="card-title">Clean Code: A Handbook of Agile Software Craftsmanship</h5>
+                <p class="card-text">Robert C. Martin</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <button class="btn btn-primary btn-sm btnDetail" data-title="Clean Code: A Handbook of Agile Software Craftsmanship" data-category="engineering" data-price="$950" data-description="Panduan yang wajib dibaca bagi programmer untuk menulis kode yang bersih dan efektif.">Detail</button>
+                <span class="text-danger fw-bold">$950</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col" data-category="engineering">
+            <div class="card h-100">
+              <img src="images/teknik2.jpg" class="card-img-top" alt="Engineering Book 2">
+              <div class="card-body">
+                <h5 class="card-title">Introduction to Algorithms</h5>
+                <p class="card-text">Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, dan Clifford Stein</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <button class="btn btn-primary btn-sm btnDetail" data-title="Introduction to Algorithms" data-category="engineering" data-price="$940" data-description="Referensi komprehensif tentang algoritma yang digunakan di dunia teknik dan ilmu komputer.">Detail</button>
+                <span class="text-danger fw-bold">$940</span>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="tentang" class="text-center bg-dark text-white py-4">
+        <h3>Tentang Kami</h3>
+        <p>Welcome to Todona, your online bookstore with a wide selection of quality books.</p>
+      </section>
+
+      <!-- Order Instructions -->
+      <section id="order" class="text-center py-4">
+        <h3>Cara Order</h3>
+        <ol class="list-group list-group-numbered w-75 mx-auto">
+          <li class="list-group-item">Choose a book from our collection.</li>
+          <li class="list-group-item">Click "Pesan Sekarang" to add it to your order list.</li>
+          <li class="list-group-item">Contact us to confirm the order.</li>
+        </ol>
+      </section>
+
+      <!-- Footer -->
+      <footer class="text-center p-3 mt-4 bg-secondary text-white">
+        &copy; 2024 Todona - Toko Buku Sederhana
+      </footer>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="bookModalLabel">Book Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="modalContent">
+            <!-- Modal content will be loaded dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="javascript/main.js"></script>
+  </body>
+</html>
