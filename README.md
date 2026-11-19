@@ -5,6 +5,7 @@ Tugas Pemrograman Web 1 (Bu Galuh) — website statis, S1 Sistem Informasi Unive
 ## Isi repo
 
 - `index.html` — halaman utama website
+- `javascript/` — logika JavaScript
 - `images/` — aset gambar
 
 ## Cara jalanin
